@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Gra Fabularna</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="punkt">
+            <p class="punkt">Punkt 1</p>
+        </div>
+        <div class="pytanie">
+            <p class="pytanie">Podaj nazwę oddziału o którym mowa w rozkazie</p>
+        </div>
+        <div class="pole">
+            <input class="pole" type="text" id="odp1">
+        </div>
+        <div class="button">
+            <input class="button" type="button" value="Sprawdź odpowiedź" onclick="zad1()">
+        </div>
+        <script type="text/javascript">
+            function zad1() {
+                let odpowiedz = document.getElementById("odp1").value;
+                if(odpowiedz.toLowerCase().includes("wisla") || odpowiedz.toLowerCase().includes("wisła")){
+                    document.write('<p>Dobra odpowiedź</p>')
+                    document.write('<a href="strona2.html">Zadanie 2</a>')
+                }
+                else{
+                    document.write("Zła odpowiedź")
+                }
+            }
+        </script>
+    </body>
+</html>

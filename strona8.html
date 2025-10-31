@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Gra Fabularna</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="punkt">
+            <p class="punkt">Punkt 8</p>
+        </div>
+        <div class="pytanie">
+            <p class="pytanie">Podaj treść zaszyfrowanego listu</p>
+        </div>
+        <div class="pole">
+            <input class="pole" type="text" id="odp1">
+        </div>
+        <div class="button">
+            <input class="button" type="button" value="Sprawdź odpowiedź" onclick="zad1()">
+        </div>
+        <script type="text/javascript">
+            function zad1() {
+                let odpowiedz = document.getElementById("odp1").value;
+                if(odpowiedz.toLowerCase().includes("wolna polska")){
+                    document.write('<p>Dobra odpowiedź</p>')
+                    document.write('<p>Wracajcie do hufca</p>')
+                }
+                else{
+                    document.write("Zła odpowiedź")
+                }
+            }
+        </script>
+    </body>
+</html>
