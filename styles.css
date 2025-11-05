@@ -7,25 +7,29 @@ font-family:Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
 background:linear-gradient(180deg,var(--bg),#eef2ff 60%);
 color:#111827;
 -webkit-font-smoothing:antialiased;
-display:flex;align-items:center;justify-content:center;padding:20px
+display:flex;align-items:center;justify-content:center;padding:20px;
+overflow-y:auto;
 }
 .phone-frame{
-width:360px;
+width:380px;
 max-width:100%;
 background:transparent;
 border-radius:28px;
-padding:18px;
+padding:24px;
 box-shadow:0 10px 30px rgba(16,24,40,0.12);
+min-height:650px;
+display:flex;align-items:center;justify-content:center;
 }
 .card{
 background:var(--card);
 border-radius:18px;
-padding:18px;
+padding:24px;
 box-shadow:0 6px 18px rgba(15,23,42,0.06);
 overflow:hidden;
+width:100%;
 }
 .header{
-display:flex;align-items:center;gap:12px;margin-bottom:10px
+display:flex;align-items:center;gap:12px;margin-bottom:20px;
 }
 .num-badge{
 min-width:64px;height:64px;border-radius:14px;
@@ -34,23 +38,30 @@ display:flex;align-items:center;justify-content:center;
 color:white;font-weight:700;font-size:28px;box-shadow:0 6px 18px rgba(108,92,231,0.28)
 }
 .title{flex:1}
-.title h1{margin:0;font-size:18px;letter-spacing:-0.2px}
-.title p{margin:2px 0 0;color:var(--muted);font-size:13px}
-.body-text{margin:14px 0 18px;font-size:15px;line-height:1.45;color:#374151}
-.form-row{display:flex;gap:12px;align-items:center}
+.title h1{margin:0;font-size:20px;letter-spacing:-0.2px}
+.title p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.body-text{margin:20px 0;font-size:16px;line-height:1.45;color:#374151}
+
+
+.form-column{
+display:flex;
+flex-direction:column;
+gap:14px;
+align-items:stretch;
+}
 .input-text{
-flex:1;padding:12px 14px;border-radius:12px;border:1px solid #e6e9f2;
-font-size:15px;outline:none;background:linear-gradient(180deg,#fff,#fbfbff);
-box-shadow:inset 0 1px 0 rgba(16,24,40,0.02)
+padding:14px 16px;border-radius:12px;border:1px solid #e6e9f2;
+font-size:16px;outline:none;background:linear-gradient(180deg,#fff,#fbfbff);
+box-shadow:inset 0 1px 0 rgba(16,24,40,0.02);
 }
 .input-text:focus{box-shadow:0 4px 18px rgba(99,102,241,0.12);border-color:rgba(99,102,241,0.6)}
 .btn{
-padding:12px 14px;border-radius:12px;border:0;font-weight:600;font-size:15px;
-background:var(--accent);color:white;cursor:pointer;min-width:84px
+padding:14px 16px;border-radius:12px;border:0;font-weight:600;font-size:16px;
+background:var(--accent);color:white;cursor:pointer;width:100%;
 }
 .btn:active{transform:translateY(1px)}
-.hint{margin-top:12px;font-size:12px;color:var(--muted)}
+.hint{margin-top:16px;font-size:13px;color:var(--muted);text-align:center}
 @media (max-width:380px){
 .num-badge{min-width:56px;height:56px;font-size:24px}
-.phone-frame{padding:14px}
+.phone-frame{padding:16px;min-height:580px;}
 }
