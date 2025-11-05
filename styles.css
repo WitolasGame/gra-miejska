@@ -65,3 +65,50 @@ background:var(--accent);color:white;cursor:pointer;width:100%;
 .num-badge{min-width:56px;height:56px;font-size:24px}
 .phone-frame{padding:16px;min-height:580px;}
 }
+
+/* Animacje odpowiedzi */
+.msg {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.msg-good {
+  color: #16a34a; /* zielony */
+}
+
+.msg-bad {
+  color: #dc2626; /* czerwony */
+}
+
+/* Efekt błysku przy dobrej odpowiedzi */
+.flash-green {
+  animation: flashGreen 1s ease;
+}
+
+@keyframes flashGreen {
+  0% { box-shadow: 0 0 0 rgba(0,0,0,0); }
+  50% { box-shadow: 0 0 30px rgba(34,197,94,0.6); }
+  100% { box-shadow: 0 0 0 rgba(0,0,0,0); }
+}
+
+/* Efekt wstrząsu przy złej odpowiedzi */
+.shake {
+  animation: shakeAnim 0.4s ease-in-out;
+}
+
+@keyframes shakeAnim {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+}
+
+/* Fade-in dla wiadomości */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}

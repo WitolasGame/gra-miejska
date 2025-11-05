@@ -34,15 +34,39 @@ Podaj nazwę oddziału o którym mowa w rozkazie
 
 
 <script type="text/javascript">
-    function zad1() {
-        let odpowiedz = document.getElementById("odp1").value;
-        if(odpowiedz.toLowerCase().includes("wisla") || odpowiedz.toLowerCase().includes("wisła")){
+function zad1() {
+    const odpowiedz = document.getElementById("odp1").value.trim().toLowerCase();
+    const card = document.querySelector(".card");
+
+    // Usuń ewentualne stare komunikaty
+    const oldMsg = document.querySelector(".msg");
+    if (oldMsg) oldMsg.remove();
+
+    const msg = document.createElement("div");
+    msg.classList.add("msg");
+    card.appendChild(msg);
+
+    if (odpowiedz.includes("wisla") || odpowiedz.includes("wisła")) {
+        msg.textContent = "Dobra odpowiedź!";
+        msg.classList.add("msg-good");
+        card.classList.add("flash-green");
+
+        setTimeout(() => {
+            card.classList.remove("flash-green");
             window.location.href = "strona2.html";
-        }
-        else{
-            document.write("Zła odpowiedź");
-        }
+        }, 1500);
+    } else {
+        msg.textContent = "Zła odpowiedź!";
+        msg.classList.add("msg-bad");
+        card.classList.add("shake");
+
+        setTimeout(() => {
+            card.classList.remove("shake");
+            msg.remove();
+        }, 2000);
     }
+}
 </script>
+
 </body>
 </html>
