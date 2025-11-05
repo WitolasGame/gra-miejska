@@ -37,8 +37,7 @@ Podaj rozszyfrowaną wiadomość
     function zad1() {
         let odpowiedz = document.getElementById("odp1").value;
         if(odpowiedz.toLowerCase().includes("z ziemi włoskiej do polski") || odpowiedz.toLowerCase().includes("z ziemi wloskiej do polski")){
-            document.write('<p>Dobra odpowiedź</p>')
-            document.write('<a href="strona4.html">Zadanie 4</a>')
+            window.location.href = "strona4.html";
         }
         else{
             document.write("Zła odpowiedź")

@@ -37,8 +37,7 @@ Podaj hasło znalezione na tablicy
     function zad1() {
         let odpowiedz = document.getElementById("odp1").value;
         if(odpowiedz.toLowerCase().includes("walczymy")){
-            document.write('<p>Dobra odpowiedź</p>')
-            document.write('<a href="strona6.html">Zadanie 6</a>')
+            window.location.href = "strona6.html";
         }
         else{
             document.write("Zła odpowiedź")

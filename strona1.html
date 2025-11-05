@@ -37,8 +37,7 @@ Podaj nazwę oddziału o którym mowa w rozkazie
     function zad1() {
         let odpowiedz = document.getElementById("odp1").value;
         if(odpowiedz.toLowerCase().includes("wisla") || odpowiedz.toLowerCase().includes("wisła")){
-            document.write('<p>Dobra odpowiedź</p>');
-            document.write('<a href="strona2.html">Zadanie 2</a>');
+            window.location.href = "strona2.html";
         }
         else{
             document.write("Zła odpowiedź");

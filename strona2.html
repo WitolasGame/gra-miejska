@@ -37,8 +37,7 @@ Podaj numery sektorów
     function zad1() {
         let odpowiedz = document.getElementById("odp1").value;
         if(odpowiedz.toLowerCase().includes("a1") && odpowiedz.toLowerCase().includes("b3") && odpowiedz.toLowerCase().includes("e4")){
-            document.write('<p>Dobra odpowiedź</p>')
-            document.write('<a href="strona3.html">Zadanie 3</a>')
+            window.location.href = "strona3.html";
         }
         else{
             document.write("Zła odpowiedź")
