@@ -1,72 +1,65 @@
 <html lang="pl">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Gra Fabularna</title>
-<link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-<div class="phone-frame" role="region" aria-label="Podgląd mobilnej strony">
-<div class="card">
-<div class="header">
-<div class="num-badge" aria-hidden="true">1</div>
-<div class="title">
-<h1>Zadanie</h1>
-<p></p>
-</div>
-</div>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Gra Fabularna</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="phone-frame" role="region" aria-label="Podgląd mobilnej strony">
+			<div class="card">
+				<div class="header">
+					<div class="num-badge" aria-hidden="true">1</div>
+					<div class="title">
+						<h1>Zadanie</h1>
+						<p></p>
+					</div>
+				</div>
 
+				<div class="body-text">Podaj nazwę oddziału o którym mowa w rozkazie</div>
 
-<div class="body-text">
-Podaj nazwę oddziału o którym mowa w rozkazie
-</div>
+				<div class="form-row">
+					<input id="odp1" class="input-text" type="text" placeholder="Twoja odpowiedź..." aria-label="Pole tekstowe" />
+					<input id="actionBtn" class="btn" type="button" value="Sprawdź" onclick="zad1()" aria-label="Przycisk sprawdź" />
+				</div>
 
+				<div class="hint">Wpisz odpowiedź i kliknij „Sprawdź”.</div>
+			</div>
+		</div>
 
-<div class="form-row">
-<input id="odp1" class="input-text" type="text" placeholder="Twoja odpowiedź..." aria-label="Pole tekstowe" />
-<input id="actionBtn" class="btn" type="button" value="Sprawdź" onclick="zad1()" aria-label="Przycisk sprawdź" />
-</div>
+		<script type="text/javascript">
+			function zad1() {
+				const odpowiedz = document.getElementById("odp1").value.trim().toLowerCase();
+				const card = document.querySelector(".card");
 
+				// Usuń ewentualne stare komunikaty
+				const oldMsg = document.querySelector(".msg");
+				if (oldMsg) oldMsg.remove();
 
-<div class="hint">Wpisz odpowiedź i kliknij „Sprawdź”.</div>
-</div>
-</div>
+				const msg = document.createElement("div");
+				msg.classList.add("msg");
+				card.appendChild(msg);
 
+				if (odpowiedz.includes("wisla") || odpowiedz.includes("wisła")) {
+					msg.textContent = "Dobra odpowiedź!";
+					msg.classList.add("msg-good");
+					card.classList.add("flash-green");
 
-<script type="text/javascript">
-function zad1() {
-    const odpowiedz = document.getElementById("odp1").value.trim().toLowerCase();
-    const card = document.querySelector(".card");
+					setTimeout(() => {
+						card.classList.remove("flash-green");
+						window.location.href = "strona2.html";
+					}, 1500);
+				} else {
+					msg.textContent = "Zła odpowiedź!";
+					msg.classList.add("msg-bad");
+					card.classList.add("shake");
 
-    // Usuń ewentualne stare komunikaty
-    const oldMsg = document.querySelector(".msg");
-    if (oldMsg) oldMsg.remove();
-
-    const msg = document.createElement("div");
-    msg.classList.add("msg");
-    card.appendChild(msg);
-
-    if (odpowiedz.includes("wisla") || odpowiedz.includes("wisła")) {
-        msg.textContent = "Dobra odpowiedź!";
-        msg.classList.add("msg-good");
-        card.classList.add("flash-green");
-
-        setTimeout(() => {
-            card.classList.remove("flash-green");
-            window.location.href = "strona2.html";
-        }, 1500);
-    } else {
-        msg.textContent = "Zła odpowiedź!";
-        msg.classList.add("msg-bad");
-        card.classList.add("shake");
-
-        setTimeout(() => {
-            card.classList.remove("shake");
-            msg.remove();
-        }, 2000);
-    }
-}
-</script>
-
-</body>
+					setTimeout(() => {
+						card.classList.remove("shake");
+						msg.remove();
+					}, 2000);
+				}
+			}
+		</script>
+	</body>
 </html>
